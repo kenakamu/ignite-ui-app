@@ -1,0 +1,34 @@
+<div class="new">
+  <div>
+    <input #imageInput [(ngModel)]="user.image" igxInput type="file" (change)="loadImage(imageInput)" />
+    <igx-avatar size="large" roundShape="true" src="{{user.image}}"></igx-avatar>
+  </div>
+  <div class="igx-form-group">
+      <input [(ngModel)]="user.id" igxInput type="number" />
+      <label igxLabel>User ID</label>
+    </div>
+  <div class="igx-form-group">
+    <input [(ngModel)]="user.name" igxInput type="text" />
+    <label igxLabel>Name</label>
+  </div>
+  <div class="igx-form-group">
+    <input style="display: none" [(ngModel)]="user.birthdate" igxInput type="text" />
+    <igx-datePicker [cancelButtonLabel]="'Close'" [todayButtonLabel]="'Today'" [locale]="'ja-JP'" [(ngModel)]="user.birthdate"></igx-datePicker>
+    <label igxLabel>Birthday</label>
+  </div>
+  <igx-radio *ngFor="let item of gender" value="{{item}}" name="group" [(ngModel)]="user.gender">{{item}}</igx-radio>
+
+  <div class="igx-form-group slider">
+    <igx-slider [minValue]="0" [maxValue]="50" [lowerBound]="0" [value]="0" [(ngModel)]="user.userRank"></igx-slider>
+    <label igxLabel>User Rank</label>
+  </div>
+  <igx-switch [checked]="user.isAdmin" [(ngModel)]="user.isAdmin" >
+      Is Admin
+  </igx-switch>
+
+  <div>
+      <span igxButton="raised" igxRipple (click)="create()">Create</span>
+    </div>
+  <igx-toast #toast message="Created!">
+  </igx-toast>
+</div>

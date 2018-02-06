@@ -1,0 +1,30 @@
+<div class="detail">
+  <div>
+    <h2 igxLabel>User ID: {{user.id}}</h2>
+    <igx-avatar size="large" roundShape="true" src="{{user.image}}"></igx-avatar>
+  </div>
+  <div class="igx-form-group">
+    <input [(ngModel)]="user.name" igxInput type="text" />
+    <label igxLabel>Name</label>
+  </div>
+  <div class="igx-form-group">
+    <input style="display: none" [(ngModel)]="user.birthdate" igxInput type="text" />
+    <igx-datePicker [cancelButtonLabel]="'Close'" [todayButtonLabel]="'Today'" [locale]="'ja-JP'" [(ngModel)]="user.birthdate"></igx-datePicker>
+    <label igxLabel>Birthday</label>
+  </div>
+  <div>
+    <span igxButton="raised" igxRipple (click)="save()">Save</span>
+    <span igxButton="raised" igxRipple (click)="dialog.open()">Delete</span>
+  </div>
+  <igx-toast #toast message="Updated!">
+  </igx-toast>
+
+  <igx-dialog #dialog
+    title="Confirmation"
+    message="Are you sure you want to delete the user?"
+    leftButtonLabel="Cancel"
+    (onLeftButtonSelect)="dialog.close()"
+    rightButtonLabel="OK"
+    (onRightButtonSelect)="delete()">
+</igx-dialog>
+</div>

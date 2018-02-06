@@ -1,0 +1,8 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<igx-navbar [title]="title" actionButtonIcon="menu" (onAction)="onClickMenu()">
+  <igx-icon name="add" (click)="onClickAdd()"></igx-icon>
+  <igx-icon name="refresh" (click)="onClickRefresh()"></igx-icon>
+</igx-navbar>
+
+<app-list #applist></app-list> 
+<router-outlet></router-outlet>

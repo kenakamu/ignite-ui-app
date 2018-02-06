@@ -1,0 +1,13 @@
+.new {
+    float: left;
+    margin: 30px;
+}
+
+.slider {
+    padding-top: 10px;
+    margin-bottom: -10px
+}
+
+igx-slider >>> .igx-slider__track-fill {
+    background: #e41c77;
+}

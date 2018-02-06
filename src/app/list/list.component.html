@@ -1,0 +1,11 @@
+<igx-scroll #scroll (onScroll)="updateList($event)" 
+    [visibleItemsCount]="visibleUsersCount" 
+    [itemHeight]="70" 
+    [totalItemsCount]="users.length">
+    <ul class="list">
+        <li class="list-item" *ngFor="let user of visibleUsers" (click)="onItemSelect(user)">
+            <igx-avatar class="list-item-image" roundShape="true" src="{{user.image}}"></igx-avatar>
+            <h5 class="list-item-value">{{user.name}}</h5>
+        </li>
+    </ul>
+</igx-scroll>

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+
   constructor(private userService: UserService, private router: Router) {
     this.load();
   }
@@ -36,8 +37,8 @@ export class ListComponent implements OnInit {
   }
 
   private onItemSelect(user: User): void {
-    // detail にナビゲート
-    this.router.navigate([`/detail/${user.id}`]);
+    // list/detail にナビゲート
+    this.router.navigate([`/list/detail/${user.id}`]);
   }
 
   private updateList($event: IgxScrollEvent): void {    

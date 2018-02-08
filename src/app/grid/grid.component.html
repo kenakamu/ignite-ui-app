@@ -1,0 +1,22 @@
+<igx-grid #grid [data]="users" [autoGenerate]="false" [paging]="true" [perPage]="6">
+  <igx-column width="80px" field="userRank" header="Rank" dataType="number" sortable="true"></igx-column>
+  <igx-column width="120px" field="image">
+    <ng-template igxCell let-col>
+      <igx-avatar size="medium" roundShape="true" src="{{col}}"></igx-avatar>
+    </ng-template>
+  </igx-column>
+
+  <igx-column field="name" header="User Name" dataType="string" editable="true"></igx-column>
+  <igx-column field="birthdate" header="BirthDate" dataType="Date">
+    <ng-template igxCell let-col>
+      {{col.toDateString()}}
+    </ng-template>
+  </igx-column>
+  <igx-column width="120px" field="gender" header="Gender" dataType="Gender"></igx-column>
+  <igx-column width="120px" field="isAdmin" header="Is Admin" dataType="boolean">
+    <ng-template igxCell let-col>
+      <igx-icon *ngIf="col" fontSet="material" name="star" color="red"></igx-icon>
+      <igx-icon *ngIf="!col" fontSet="material" name="star_border"></igx-icon>
+    </ng-template>
+  </igx-column>
+</igx-grid>

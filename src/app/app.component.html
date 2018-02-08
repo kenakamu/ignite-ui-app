@@ -1,8 +1,27 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<igx-navbar [title]="title" actionButtonIcon="menu" (onAction)="onClickMenu()">
+<igx-navbar [title]="title" actionButtonIcon="menu" (onAction)="drawer.toggle()">
   <igx-icon name="add" (click)="onClickAdd()"></igx-icon>
-  <igx-icon name="refresh" (click)="onClickRefresh()"></igx-icon>
 </igx-navbar>
+<!-- ドロワーの追加 -->
+<igx-nav-drawer #drawer [pinThreshold]="false" width="280px">
+  <div class="ig-drawer-content">
+    <nav class="nav">
+      <!-- ヘッダー -->
+      <span class="nav-item header">menus</span>
+      <!-- メニューの追加 -->
+      <span class="nav-item" [routerLinkActive]="'active'" routerLink="list" (click)="drawer.close();">
+        <igx-icon fontSet="material" name="list"></igx-icon>
+        <span>List</span>
+      </span>
+      <span class="nav-item" [routerLinkActive]="'active'" routerLink="grid" (click)="drawer.close();">
+        <igx-icon fontSet="material" name="grid_on"></igx-icon>
+        <span>Grid</span>
+      </span>
+      <span class="nav-item" [routerLinkActive]="'active'" routerLink="card" (click)="drawer.close();">
+        <igx-icon fontSet="material" name="view_module"></igx-icon>
+        <span>Card</span>
+      </span>
+    </nav>
+  </div>
+</igx-nav-drawer>
 
-<app-list #applist></app-list> 
 <router-outlet></router-outlet>

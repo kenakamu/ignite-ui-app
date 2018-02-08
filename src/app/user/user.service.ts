@@ -16,6 +16,16 @@ export class UserService {
     this.users = new Array<User>();
     for (let i = 1; i <= 22; i++) {
       let birthdate = new Date(2018, 0, i);
+      let backgrounImage = "http://www.infragistics.com/angular-demos/assets/images/card/media/ny.jpg";
+      if( i % 4 == 1){
+        backgrounImage = "http://www.infragistics.com/angular-demos/assets/images/card/media/yosemite.jpg";
+      }
+      else if (i%4 == 2){
+        backgrounImage = "http://www.infragistics.com/angular-demos/assets/images/card/media/monuments.jpg";
+      }
+      else if (i%4 == 3){
+        backgrounImage = "http://www.infragistics.com/angular-demos/assets/images/card/media/the_red_ice_forest.jpg";
+      }
       this.users.push(new User(
         `http://www.infragistics.com/angular-demos/assets/images/avatar/${i}.jpg`,
         "User: " + i,
@@ -23,7 +33,8 @@ export class UserService {
         birthdate,
         Gender.Other,
         i,
-        false
+        true,
+        backgrounImage
       ));
     }
   }

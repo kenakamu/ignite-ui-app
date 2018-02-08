@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// Detail コンポーネントの追加
-import { DetailComponent } from './detail/detail.component'; 
-import { NewComponent } from './new/new.component'; 
+import { ListComponent } from './list/list.component';
+import { GridComponent } from './grid/grid.component';
+import { CardComponent } from './card/card.component';
 
 const routes: Routes = [
-  // detail をパスとして指定したら Detail コンポーネントを表示。idがパラメーター
-  { path: 'detail/:id', component: DetailComponent },
-  // new をパスとして指定したら New コンポーネントを表示
-  { path: 'new', component: NewComponent } 
+  // 既定はリストコンポーネントを表示
+  { path: '', component: ListComponent },
+  { path: 'list', component: ListComponent },
+  { path: 'grid', component: GridComponent },
+  { path: 'card', component: CardComponent }
 ];
 
 @NgModule({

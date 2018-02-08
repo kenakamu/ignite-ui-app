@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { User } from './models/user';
-import { ListComponent } from './list/list.component';
 import { Router } from '@angular/router';
+import { IgxNavbar, IgxIcon, NavigationDrawer } from 'igniteui-angular/main';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
 
-  @ViewChild('applist') listComponent: ListComponent;
   selectedUser: User;
 
   title = 'Ignite Ui App';
@@ -19,15 +18,8 @@ export class AppComponent {
   constructor(private router: Router) {
   }
 
-  onClickMenu(){
-    window.alert("menu clicked");
-  }
-
   onClickAdd(){
-    this.router.navigate(['/new']);
-  }
-
-  onClickRefresh(){
-    this.listComponent.load();
+    // list/new を呼び出し
+    this.router.navigate(['/list/new']);
   }
 }

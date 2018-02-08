@@ -6,9 +6,10 @@ export class User {
     public gender: Gender
     public userRank: number
     public isAdmin: boolean
-
+    public backgroundImage: string
+    
     constructor(image: string, name: string, id: number, birthdate: Date,
-    gender: Gender, userRank: number, isAdmin: boolean ) {
+    gender: Gender, userRank: number, isAdmin: boolean, backgroundImage: string ) {
         this.image = image;
         this.name = name;
         this.id = id;
@@ -16,6 +17,7 @@ export class User {
         this.gender = gender;
         this.userRank = userRank;
         this.isAdmin = isAdmin;
+        this.backgroundImage = backgroundImage;
     }
 }
 

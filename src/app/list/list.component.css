@@ -16,3 +16,7 @@
     flex-shrink: 1;
     flex-basis: auto;
 }
+
+igx-scroll, router-outlet {
+    float: left;
+}

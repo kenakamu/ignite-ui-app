@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { User, Gender } from '../models/user';
-import { UserService } from '../user/user.service';
+import { User, Gender } from '../../models/user';
+import { UserService } from '../../user/user.service';
 import { IgxLabel, IgxInput, IgxAvatar, IgxToast, IgxDialog, IgxCheckbox, IgxSwitch, IgxSlider, IgxRadio } from 'igniteui-angular/main';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
